@@ -42,6 +42,11 @@ class Ws
     public function onMessage($ws, $frame)
     {
         echo "Message: {$frame->data}-{$frame->fd}\n";
+        // 五秒后给客户端发送消息
+        swoole_timer_after(5000, function () use ($ws, $frame) {
+            echo "5s-after\n";
+            $ws->push($frame->fd, "server: i am server" . date("Y-m-d H:i:s"));
+        });
         $ws->push($frame->fd, "server: i am server" . date("Y-m-d H:i:s"));
     }
 
