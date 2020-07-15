@@ -33,7 +33,7 @@ class Ws
         if ($request->fd == 3) {
             // 每两秒执行
             swoole_timer_tick(2000, function ($timer_id) {
-                echo "2s: timerId:{$timer_id}";
+                echo "2s: timerId:{$timer_id}\n";
             });
         }
     }
