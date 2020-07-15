@@ -30,7 +30,7 @@ class Ws
     public function onOpen($ws, $request)
     {
         echo $request->fd . "\n";
-        if ($request->fd == 1) {
+        if ($request->fd == 3) {
             // 每两秒执行
             swoole_timer_tick(2000, function ($timer_id) {
                 echo "2s: timerId:{$timer_id}";
