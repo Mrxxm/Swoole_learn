@@ -3,12 +3,7 @@
 use Swoole\Process;
 
 $urls = [
-    'http://baidu.com',
-    'http://qq.com',
-    'http://sina.com.cn',
-    'http://baidu.com',
-    'http://baidu.com',
-    'http://baidu.com',
+    'http://baidu.com', 'http://qq.com', 'http://sina.com.cn', 'http://baidu.com', 'http://baidu.com', 'http://baidu.com',
 ];
 
 // 原始使用
