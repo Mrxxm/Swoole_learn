@@ -43,7 +43,7 @@ function curlData($url)
     // curl file_get_contents
     sleep(2);
 
-    return $url . " success" . PHP_EOL;
+    return $url . " success!" . PHP_EOL;
 }
 
 /*
