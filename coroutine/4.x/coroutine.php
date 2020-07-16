@@ -1,7 +1,7 @@
 <?php
 
 go(function () {
-    co::sleep(1);
+    sleep(1);
     echo "协程1" . PHP_EOL;
 });
 
