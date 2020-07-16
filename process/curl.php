@@ -15,6 +15,9 @@ $urls = [
 //foreach ($urls as $url) {
 //    $content[] = file_get_contents($url);
 //}
+
+echo "process-start-time:" . date('Y-m-d H:i:s');
+
 $workers = [];
 
 for ($i = 0; $i < 6; $i++) {
@@ -30,14 +33,6 @@ for ($i = 0; $i < 6; $i++) {
     $workers[$pid] = $process;
 }
 
-/*
- * 输出管道内容
- */
-foreach ($workers as $pid => $process) {
-    // 输出管道内容
-    echo $process->read();
-}
-
 /**
  * 模拟请求URL的内容
  * @param $url
@@ -50,3 +45,14 @@ function curlData($url)
 
     return $url . "success" . PHP_EOL;
 }
+
+/*
+ * 输出管道内容
+ */
+foreach ($workers as $pid => $process) {
+    // 输出管道内容
+    echo $process->read();
+}
+
+echo "process-end-time:" . date('Y-m-d H:i:s');
+
