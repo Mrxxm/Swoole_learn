@@ -16,7 +16,7 @@ $urls = [
 //    $content[] = file_get_contents($url);
 //}
 
-echo "process-start-time:" . date('Y-m-d H:i:s');
+echo "process-start-time:" . date('Y-m-d H:i:s') . PHP_EOL;
 
 $workers = [];
 
@@ -43,7 +43,7 @@ function curlData($url)
     // curl file_get_contents
     sleep(2);
 
-    return $url . "success" . PHP_EOL;
+    return $url . " success" . PHP_EOL;
 }
 
 /*
@@ -54,5 +54,5 @@ foreach ($workers as $pid => $process) {
     echo $process->read();
 }
 
-echo "process-end-time:" . date('Y-m-d H:i:s');
+echo "process-end-time:" . date('Y-m-d H:i:s') . PHP_EOL;
 
