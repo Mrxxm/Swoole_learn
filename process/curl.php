@@ -22,6 +22,8 @@ for ($i = 0; $i < 6; $i++) {
         $content = curlData($urls[$i]);
         // 输出到管道
         echo $content . PHP_EOL;
+        // 或者写入到管道
+//        $process->write($content);
     }, true);
 
     $pid = $process->start();
