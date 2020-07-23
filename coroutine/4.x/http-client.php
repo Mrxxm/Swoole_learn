@@ -14,5 +14,6 @@ Co\run(function (){
 
     $cli->get('/api/v1/banner/1');
     echo $cli->body;
+    echo $cli->statusCode;
     $cli->close();
 });
