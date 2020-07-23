@@ -1,5 +1,8 @@
 <?php
 
+// 接口
+// http://127.0.0.1:8000/api/v1/banner/1
+
 Co\run(function (){
     $cli = new Swoole\Coroutine\Http\Client('127.0.0.1', 8000);
 
@@ -9,7 +12,7 @@ Co\run(function (){
         ]
     );
 
-    $cli->get('/index.php');
+    $cli->get('/api/v1/banner/1');
     echo $cli->body;
     $cli->close();
 });
