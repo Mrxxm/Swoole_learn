@@ -3,7 +3,7 @@
 </head>
 <h1>swoole ws 测试</h1>
 <script>
-    var wsServer = 'ws://127.0.0.1:8812/websocket';
+    var wsServer = 'ws://127.0.0.1:9502/websocket';
     var websocket = new WebSocket(wsServer);
     websocket.onopen = function (evt) {
         websocket.send("client: hello, i am client!");
