@@ -8,6 +8,14 @@ Co\run(function () {
 
     $server = new Co\Http\Server("127.0.0.1", 8812, false);
 
+    // 开启静态文件
+    $server->set(
+        [
+            'enable_static_handler' => true,
+            'document_root' => '/var/www/swoole/data',
+        ]
+    );
+
     $server->handle('/websocket', function ($request, $ws) {
         $ws->upgrade(); // 向客户端发送websocket握手信息
 
