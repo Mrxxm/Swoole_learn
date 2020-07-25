@@ -6,7 +6,7 @@
 
 Co\run(function () {
 
-    $server = new Co\Http\Server("127.0.0.1", 9502, false);
+    $server = new Co\Http\Server("127.0.0.1", 8812, false);
 
     $server->handle('/websocket', function ($request, $ws) {
         $ws->upgrade(); // 向客户端发送websocket握手信息
