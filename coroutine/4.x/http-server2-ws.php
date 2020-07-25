@@ -8,18 +8,6 @@ Co\run(function () {
 
     $server = new Co\Http\Server("127.0.0.1", 9502, false);
 
-    // 开启静态文件
-    $server->set(
-        [
-            'enable_static_handler' => true,
-            'document_root' => '/var/www/swoole/data',
-        ]
-    );
-
-//    $server->handle('/', function ($request, $response) {
-//        $response->end("<h1>Index</h1>");
-//    });
-
     $server->handle('/websocket', function ($request, $ws) {
         $ws->upgrade(); // 向客户端发送websocket握手信息
 
@@ -35,13 +23,12 @@ Co\run(function () {
                     $ws->close();
                     return;
                 }
+                echo $frame->data;
                 $ws->push("Hello {$frame->data}!");
                 $ws->push("How are you, {$frame->data}?");
             }
         }
     });
-
-
 
     $server->start();
 });
