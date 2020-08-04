@@ -30,4 +30,8 @@ $ws->on('close', function ($ws, $fd) {
     echo "client-{$fd} is closed\n";
 });
 
+$ws->on('request', function ($request, $response) {
+    echo "onRequest\n";
+});
+
 $ws->start();
